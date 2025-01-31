@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  },
+  "name": "inft2202",
+  "version": "1.0.0",
+  "description": "My ICE Folder",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyle-hosein/INFT2202.git"
+  },
+  "author": "Kyle Hosein",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kyle-hosein/INFT2202/issues"
+  },
+  "homepage": "https://github.com/kyle-hosein/INFT2202#readme",
+
+  "type": "module"
+}
