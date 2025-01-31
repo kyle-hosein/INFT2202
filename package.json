@@ -6,6 +6,7 @@
   "version": "1.0.0",
   "description": "My ICE Folder",
   "main": "index.js",
+  "type": "module",
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,7 +20,5 @@
   "bugs": {
     "url": "https://github.com/kyle-hosein/INFT2202/issues"
   },
-  "homepage": "https://github.com/kyle-hosein/INFT2202#readme",
-
-  "type": "module"
+  "homepage": "https://github.com/kyle-hosein/INFT2202#readme"
 }
