@@ -3,6 +3,9 @@ File name: ICE2
 <Date:17/01/25>
 Description: ICE2
 */
+
+import animalMockService from "./animals/animal.mock.service.js";
+import Animal from "./animals/animal.js";
 // create a handler to deal with the submit event
 function submitAnimalForm ( event ) {
     // prevent the default action from happening
