@@ -5,7 +5,7 @@ File name: ICE2
 <Date:17/01/25>
 Description: ICE2
 */
-const animals = animalService.getAnimals();
+const animals = await animalService.getAnimals();
 console.log(animals);
 
 let currentPage = 1;
@@ -55,10 +55,10 @@ function drawAnimalsTable(animalList = animals, page = 1) {
         cell4.textContent = animal.eyes;
         cell5.textContent = animal.sound;
         cell6.innerHTML = `
-            <button class="btn btn-primary edit-btn" data-bs-toggle="tooltip" data-bs-placement="top" title="This is to edit" data-animal='${JSON.stringify(animal)}'>
+            <button class="btn btn-primary edit-btn d-none" data-bs-toggle="tooltip" data-bs-placement="top" title="This is to edit" data-animal='${JSON.stringify(animal)}'>
                 <i class="fa-regular fa-user"></i>
             </button>
-            <button class="btn btn-danger delete-btn" data-bs-toggle="tooltip" data-bs-placement="top" title="This is to delete" data-animal='${JSON.stringify(animal)}'>
+            <button class="btn btn-danger delete-btn d-none" data-bs-toggle="tooltip" data-bs-placement="top" title="This is to delete" data-animal='${JSON.stringify(animal)}'>
                 <i class="fa-solid fa-trash"></i>
             </button>
         `;

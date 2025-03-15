@@ -6,6 +6,8 @@ Description: ICE2
 /*
  *  Service constructor
  */
+let apiKey = "7cdceee2-a86a-4b22-b68a-3e95067b7ae7";
+const url = "https://inft2202.opentech.durhamcollege.org/api/animals";
 function AnimalService() {
     function initAnimals() {
         let animals = [];
@@ -22,16 +24,33 @@ function AnimalService() {
         }
 
         // If there's no entry for animals in localStorage, initialize it
-        if (!localStorage.getItem('animals')) {
-            localStorage.setItem('animals', JSON.stringify(animals));
-        }
+        // if (!localStorage.getItem('animals')) {
+        //     localStorage.setItem('animals', JSON.stringify(animals));
+        // }
     }
 
     initAnimals();
 }
 
-AnimalService.prototype.getAnimals = function () {
-    return JSON.parse(localStorage.getItem('animals')) || [];
+AnimalService.prototype.getAnimals = async function () {
+    try {
+        let response = await fetch(`${url}`, {
+            method: 'GET', 
+            headers: {
+                'Content-Type': 'application/json',
+                'apikey': apiKey
+            }})
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+    
+        const data = await response.json();
+        console.log(data.records);
+        return data.records    
+    } catch (error) {
+        throw new Error(error);
+        
+    }
 };
 
 AnimalService.prototype.findAnimal = async function (id) {
@@ -94,5 +113,28 @@ AnimalService.prototype.deleteAnimal = async function (animalDelete) {
     localStorage.setItem('animals', JSON.stringify(filteredAnimals));
     return true;
 };
+
+AnimalService.prototype.createAnimal = async function(animalCreate) {
+    try {
+        const response = await fetch(`${url}`, {
+            method: 'POST', 
+            headers: {
+                'Content-Type': 'application/json',
+                'apikey': apiKey
+            },
+            body: JSON.stringify(animalCreate)
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+
+}
 
 export default new AnimalService();
