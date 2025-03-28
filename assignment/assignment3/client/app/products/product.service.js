@@ -40,7 +40,7 @@ class ProductService {
         try {
             const response = await fetch(this.host, {
                 method: "POST",
-                body: JSON.stringify([product]),
+                body: JSON.stringify(product),
                 headers: { "Content-Type": "application/json" }
             });
             const data = await response.json();

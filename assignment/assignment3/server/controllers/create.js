@@ -12,10 +12,10 @@ module.exports = async (req, res, next) => {
 
   try {
     // Destructure the necessary fields from req.body
-    const { name, price, stock, description } = req.body;
+    const { name, price, stock, description, user, imageUrl } = req.body;
 
     // Prepare the product data (optional: you can modify the structure here)
-    const productData = { name, price, stock, description: description || '' };
+    const productData = { name, price, stock, description: description || '', user, imageUrl };
 
     // Create a new product using the productService
     const product = await productService.create(productData);

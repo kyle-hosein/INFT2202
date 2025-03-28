@@ -36,7 +36,9 @@ Product.prototype.getObject = function(){
         "description": this.description,
         "stock": this.stock,
         "price": this.price,
-        "user": this.user}
+        "user": this.user,
+        "imageUrl": this.imageUrl
+    }
 }
 
 // Export Product function for modular JavaScript usage

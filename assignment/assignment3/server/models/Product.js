@@ -20,6 +20,16 @@ const productSchema = new mongoose.Schema({
     type: String,
     default: '',
     trim: true
+  },
+  user: {
+    type: String,
+    trim: true,
+    default: null // optional
+  }, 
+  imageUrl :{
+    type: String,
+    trim: true,
+    default: null
   }
 }, {
   timestamps: true 
