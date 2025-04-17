@@ -1,0 +1,32 @@
+<section class="about-page container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <h1 class="mb-4">About Me</h1>
+
+            <img src="<%= photo %>" alt="<%= name %>'s Profile Picture" class="img-fluid rounded-circle mb-3 shadow"
+                width="200">
+
+            <p class="lead">
+                Hi, my name is <strong>
+                    <%= name %>
+                </strong>, and I’m from <strong>
+                    <%= location %>
+                </strong>.
+            </p>
+
+            <p>
+                I’m currently looking for job opportunities in the field of <strong>
+                    <%= field %>
+                </strong>.
+            </p>
+
+            <p>
+                Contact me at:
+                <a href="mailto:<%= email %>" class="text-primary">
+                    <%= email %>
+                </a>
+            </p>
+
+        </div>
+    </div>
+</section>
